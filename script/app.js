@@ -81,19 +81,23 @@ const displayPhones = (data) => {
       
         
         `;
-        phones.appendChild(div)
-        // console.log(div);
 
         
+        phones.appendChild(div)
+               
     })
 
-
+    // spinier stopping
+    toggleSpinner(false)
 
 
 }
 
 
 const  searchButton = () => {
+
+    // spinier starting
+    toggleSpinner(true)
 
     const inputValue = document.getElementById("simple-search").value;
 
@@ -105,4 +109,10 @@ const  searchButton = () => {
 
 
 
-// displayPhones()
+const toggleSpinner = isLoading =>{
+    if(isLoading){
+        document.getElementById("spinner").classList.remove("hidden");
+    }else{
+        document.getElementById("spinner").classList.add("hidden");
+    }
+}
